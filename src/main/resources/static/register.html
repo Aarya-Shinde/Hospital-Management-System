@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Hospital Management</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register</h2>
+    <form action="/register" method="POST">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Choose a password" required>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+</body>
+<style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* White background */
+    color: darkblue; /* Dark blue text */
+    }
+
+    .form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2e8b57; /* Dark emerald green background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white; /* White text in the form container */
+    }
+
+    h2 {
+    text-align: center;
+    color: white; /* White text for heading */
+    }
+
+    label {
+    display: block;
+    margin-bottom: 8px;
+    color: white; /* White text for labels */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: darkblue; /* Dark blue button */
+    color: white; /* White text on the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+
+    button[type="submit"]:hover {
+    background-color: #1d5e96; /* Lighter blue on hover */
+    }
+
+    p {
+    text-align: center;
+    color: white; /* White text for the paragraph */
+    }
+
+    a {
+    color: #1d5e96; /* Lighter blue links */
+    }
+
+</style>
+</html>
