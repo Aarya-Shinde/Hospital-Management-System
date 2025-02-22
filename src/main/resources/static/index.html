@@ -1,10 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>Hospital Management</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero">
+      <h2>Welcome to Our Hospital Management System</h2>
+      <p>Managing healthcare made easy. Explore our services and find out how we can help you.</p>
+      <a href="services.html" class="btn">Explore Services</a>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>Patient Management</h3>
+        <p>Keep track of patient records and history with ease.</p>
+      </div>
+      <div class="feature">
+        <h3>Appointment Scheduling</h3>
+        <p>Schedule and manage patient appointments seamlessly.</p>
+      </div>
+      <div class="feature">
+        <h3>Billing and Invoicing</h3>
+        <p>Handle billing and invoicing efficiently.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hospital Management System. All rights reserved.</p>
+  </footer>
+
+  <style>
+    /* Basic CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f6f9;
+      color: #5a5a5a;
+    }
+
+    header {
+      background-color: #0a72b1;
+      color: white;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo h1 {
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+    }
+
+    nav ul li a:hover {
+      background-color: #075a8d;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+    }
+
+    .hero h2 {
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      margin: 0 0 20px;
+      font-size: 18px;
+    }
+
+    .btn {
+      background-color: #0a72b1;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #075a8d;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin: 10px;
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #0a72b1;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </body>
 </html>
