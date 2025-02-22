@@ -1,13 +1,12 @@
-package hospital;
+package com.hospital;  // Change this to match the folder structure
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HmsApplicationTests {
+public class HmsApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
-
 }
