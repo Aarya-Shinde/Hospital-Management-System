@@ -1,32 +1,25 @@
 package com.anudip.HMS.entity;
 
+
 import jakarta.persistence.*;
-        import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Table(name = "patients")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "patients")
 public class Patient {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //The patient id is amtomatically being generated
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
     private int age;
-
-    @Column(nullable = false)
     private String gender;
-
-    @Column(nullable = false, unique = true)
     private String contact;
-
     private String disease;
     private String doctor;
 }
+

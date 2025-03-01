@@ -1,4 +1,5 @@
-   function validatePassword() {
+
+function validatePassword() {
             let password = document.getElementById("password").value;
             let confirmPassword = document.getElementById("cpassword").value;
             let message = document.getElementById("message");
@@ -19,6 +20,17 @@
                 return true;
             }
         }
+
+//JS for Form Validation
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Form Submitted Successfully!");
+    });
+});
+
+
+
 
 
 //1. Fetching Employees (fetchEmployees())
@@ -96,3 +108,28 @@ function deletePatient(id) {
 
 // Load patients on page load
 document.addEventListener("DOMContentLoaded", fetchPatients);
+
+
+//regiester form
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const patientData = {
+        name: document.getElementById("name").value,
+        age: document.getElementById("age").value,
+        gender: document.getElementById("gender").value,
+        contact: document.getElementById("contact").value
+    };
+
+    fetch("http://localhost:8080/api/patients/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(patientData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Registration Successful!");
+        console.log(data);
+    })
+    .catch(error => console.error("Error:", error));
+});
