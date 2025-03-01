@@ -8,16 +8,19 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
+
 <!-- Navbar -->
 <nav class="navbar">
-    <div class="logo"> Smart Hospital</div>
-    <ul class="nav-links">
+    <div class="logo">Smart Hospital</div>
+    <ul class="nav-links" id="navLinks">
         <li><a href="appointment.html">Book Appointment</a></li>
         <li><a href="patient-dashboard.html">Patient Dashboard</a></li>
         <li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
+
 
 <!-- Hero Section -->
 <header class="hero">
@@ -48,11 +51,88 @@
     </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@smarthospital.com | Phone: +123 456 7890</p>
+<!-- Services Section -->
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+        <div class="service">
+            <i class="fas fa-user-nurse"></i>
+            <h3>24/7 Emergency Care</h3>
+            <p>Immediate medical assistance available anytime.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-stethoscope"></i>
+            <h3>Advanced Diagnostics</h3>
+            <p>High-tech medical equipment for precise diagnosis.</p>
+        </div>
+        <div class="service">
+            <i class="fas fa-pills"></i>
+            <h3>Pharmacy Services</h3>
+            <p>Get your prescriptions easily from our pharmacy.</p>
+        </div>
+    </div>
 </section>
 
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <h2>What Our Patients Say</h2>
+    <div class="testimonial-slider">
+        <div class="testimonial">
+            <p>"The doctors were very professional and caring. I highly recommend Smart Hospital!"</p>
+            <h4>- Sarah J.</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Booking an appointment was so easy. The service is outstanding!"</p>
+            <h4>- Michael R.</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Fast and reliable service. The best hospital experience I’ve ever had!"</p>
+            <h4>- Linda P.</h4>
+        </div>
+    </div>
+</section>
+
+<!-- FAQs Section -->
+<section class="faqs">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+        <h3>How do I book an appointment?</h3>
+        <p>You can book an appointment online using our easy-to-use booking system.</p>
+    </div>
+    <div class="faq">
+        <h3>Do you accept insurance?</h3>
+        <p>Yes, we accept all major health insurance plans.</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<footer>
+    <p>&copy; 2025 Smart Hospital. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Smart Hospital Management. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+
+<script>
+
+    function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+</script>
 </body>
 </html>
