@@ -5,7 +5,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Table(name = "appointments") // Ensures consistent table naming
+@Table(name = "appointments")
+
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
