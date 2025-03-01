@@ -26,12 +26,3 @@ public class PatientController {
     }
 }
 
-
-
-//@RestController → Marks this as a REST API controller.
-//@RequestMapping("/patients") → Defines the base URL.
-//@CrossOrigin(origins = "*") → Allows front-end apps to call APIs.
-//@GetMapping → Retrieves patients.
-//@PostMapping → Adds a new patient.
-//@PutMapping → Updates patient details.
-//@DeleteMapping → Deletes a patient.

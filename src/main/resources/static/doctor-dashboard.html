@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<h2>Appointments</h2>
+<label for="date">Select Date:</label>
+<input type="date" id="date">
+<button onclick="loadAppointments()">View Appointments</button>
+
+<table>
+    <thead>
+    <tr><th>Patient</th><th>Time</th><th>Action</th></tr>
+    </thead>
+    <tbody id="appointmentsList"></tbody>
+</table>
+
+<script>
+    function loadAppointments() {
+        const doctorName = "Dr. Smith"; // Change dynamically
+        const date = document.getElementById("date").value;
+
+        axios.get(`http://localhost:8080/appointments/${doctorName}/${date}`)
+            .then(response => {
+                let rows = "";
+                response.data.forEach(app => {
+                    rows += `<tr><td>${app.patientName}</td><td>${app.time}</td>
+                             <td><button onclick="cancelAppointment(${app.id})">Cancel</button></td></tr>`;
+                });
+                document.getElementById("appointmentsList").innerHTML = rows;
+            });
+    }
+
+    function cancelAppointment(id) {
+        axios.delete(`http://localhost:8080/appointments/cancel/${id}`)
+            .then(() => alert("Appointment canceled"));
+    }
+</script>
+</body>
+</html>

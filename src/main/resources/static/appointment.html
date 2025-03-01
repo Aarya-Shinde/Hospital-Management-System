@@ -4,36 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
+<h2>Book an Appointment</h2>
+<label for="patientName">Patient Name:</label>
+<input type="text" id="patientName" required>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Global Hospital</a>
-</nav>
+<label for="doctorName">Select Doctor:</label>
+<select id="doctorName">
+    <option value="Dr. Smith">Dr. Smith</option>
+    <option value="Dr. Johnson">Dr. Johnson</option>
+</select>
 
-<div class="container mt-5">
-    <h3>Book an Appointment</h3>
-    <form>
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="form-group">
-            <label for="doctor">Select Doctor</label>
-            <select class="form-control" id="doctor">
-                <option>Dr. Smith - Cardiologist</option>
-                <option>Dr. Johnson - Neurologist</option>
-                <option>Dr. Brown - Dermatologist</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="date">Appointment Date</label>
-            <input type="date" class="form-control" id="date" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Book</button>
-    </form>
-</div>
+<label for="date">Select Date:</label>
+<input type="date" id="date" required>
 
+<label for="time">Select Time:</label>
+<input type="time" id="time" required>
+
+<button onclick="bookAppointment()">Book Appointment</button>
+
+<script>
+    function bookAppointment() {
+        const appointment = {
+            patientName: document.getElementById("patientName").value,
+            doctorName: document.getElementById("doctorName").value,
+            date: document.getElementById("date").value,
+            time: document.getElementById("time").value,
+            status: "Scheduled"
+        };
+
+        axios.post("http://localhost:8080/appointments/book", appointment)
+            .then(response => alert("Appointment booked successfully!"))
+            .catch(error => alert("Error booking appointment."));
+    }
+</script>
 </body>
 </html>

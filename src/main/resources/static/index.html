@@ -3,97 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management System</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/logo.avif">
-
-    <!-- Bootstrap & Fonts -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <!--linking the style sheet -->
+    <title>Smart Hospital Management</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-
 <body>
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <h4><i class="fa fa-hospital"></i> GLOBAL HOSPITALS</h4>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
-            </ul>
-        </div>
-    </div>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo"> Smart Hospital</div>
+    <ul class="nav-links">
+        <li><a href="appointment.html">Book Appointment</a></li>
+        <li><a href="patient-dashboard.html">Patient Dashboard</a></li>
+        <li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
-<!-- Registration & Login Section -->
-<div class="container register">
-    <div class="row">
-        <div class="col-md-3 register-left">
-            <img src="img/logo.avif" alt="Hospital Logo">
-            <h3>Welcome</h3>
-            <p>Join our hospital system for seamless healthcare.</p>
+<!-- Hero Section -->
+<header class="hero">
+    <h1>Welcome to Smart Hospital Management</h1>
+    <p>Your health, our priority. Book appointments with ease.</p>
+    <a href="appointment.html" class="btn">Book Appointment</a>
+</header>
+
+<!-- About Section -->
+<section class="about">
+    <h2>Why Choose Us?</h2>
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-user-md"></i>
+            <h3>Expert Doctors</h3>
+            <p>Connect with highly qualified and experienced medical professionals.</p>
         </div>
-        <div class="col-md-9 register-right">
-            <ul class="nav nav-tabs" id="myTab">
-                <li class="nav-item"><a class="nav-link active" id="patient-tab" data-toggle="tab" href="#patient">Patient</a></li>
-                <li class="nav-item"><a class="nav-link" id="doctor-tab" data-toggle="tab" href="#doctor">Doctor</a></li>
-                <li class="nav-item"><a class="nav-link" id="admin-tab" data-toggle="tab" href="#admin">Admin</a></li>
-            </ul>
-
-            <div class="tab-content" id="myTabContent">
-
-                <!-- Patient Registration -->
-                <div class="tab-pane fade show active" id="patient">
-                    <h3>Register as Patient</h3>
-                    <form>
-                        <input type="text" class="form-control mb-2" placeholder="First Name" required>
-                        <input type="text" class="form-control mb-2" placeholder="Last Name" required>
-                        <input type="email" class="form-control mb-2" placeholder="Your Email" required>
-                        <input type="number" class="form-control mb-2" placeholder="Phone Number" required>
-                        <input type="password" class="form-control mb-2" id="password" placeholder="Password" required>
-                        <input type="password" class="form-control mb-2" id="cpassword" placeholder="Confirm Password" required onkeyup="validatePassword();">
-                        <span id="message"></span>
-                        <input type="submit" class="btnRegister" value="Register">
-                    </form>
-                </div>
-
-                <!-- Doctor Login -->
-                <div class="tab-pane fade" id="doctor">
-                    <h3>Login as Doctor</h3>
-                    <form>
-                        <input type="text" class="form-control mb-2" placeholder="Username" required>
-                        <input type="password" class="form-control mb-2" placeholder="Password" required>
-                        <input type="submit" class="btnRegister" value="Login">
-                    </form>
-                </div>
-
-                <!-- Admin Login -->
-                <div class="tab-pane fade" id="admin">
-                    <h3>Login as Admin</h3>
-                    <form>
-                        <input type="text" class="form-control mb-2" placeholder="Admin ID" required>
-                        <input type="password" class="form-control mb-2" placeholder="Password" required>
-                        <input type="submit" class="btnRegister" value="Login">
-                    </form>
-                </div>
-            </div>
+        <div class="feature">
+            <i class="fas fa-calendar-check"></i>
+            <h3>Easy Appointments</h3>
+            <p>Schedule appointments with just a few clicks using our online booking system.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Secure & Reliable</h3>
+            <p>Your data is safe with us, ensuring a secure healthcare experience.</p>
         </div>
     </div>
-</div>
+</section>
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@smarthospital.com | Phone: +123 456 7890</p>
+</section>
+
 </body>
 </html>
