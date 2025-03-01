@@ -1,0 +1,42 @@
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: linear-gradient(to right, #f2f2f2, #e0e0e0);
+        }
+        .navbar {
+            background: #003366 !important;
+        }
+        .navbar-brand h4 {
+            color: white;
+            margin: 0;
+        }
+        .register {
+            background: white;
+            margin-top: 5%;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .nav-tabs .nav-item .nav-link {
+            color: #003366;
+            font-weight: bold;
+        }
+        .nav-tabs .nav-item .nav-link.active {
+            background: #003366;
+            color: white;
+        }
+        .btnRegister {
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            background: #003366;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btnRegister:hover {
+            background: #00509e;
+        }
+        .form-control {
+            border-radius: 0.5rem;
+        }
