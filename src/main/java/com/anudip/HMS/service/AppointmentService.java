@@ -10,12 +10,18 @@ import java.util.List;
 
 @Service
 public class AppointmentService {
+
+    private final AppointmentRepository appointmentRepository;
+
     @Autowired
-    private AppointmentRepository appointmentRepository;
+    public AppointmentService(AppointmentRepository appointmentRepository) {
+        this.appointmentRepository = appointmentRepository;
+    }
 
     public List<Appointment> getAppointmentsByDoctor(String doctorName, LocalDate date) {
-        return appointmentRepository.findByDoctorNameAndDate(doctorName, date);
+        return appointmentRepository.findByDoctor_NameAndDate(doctorName, date);
     }
+
     public List<Appointment> getAllAppointments() {
         return appointmentRepository.findAll();
     }

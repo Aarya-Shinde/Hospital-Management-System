@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="appointments.html">Appointments</a></li>
+        <li id="dashboard-link" style="display:none;"><a href="#">Dashboard</a></li>
+        <li id="logout-btn" style="display:none;"><a href="#">Logout</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p id="error-message" style="color:red;"></p>
+    <p>Don't have an account? <a href="register.html">Register here</a></p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const token = localStorage.getItem("userToken");
+      const role = localStorage.getItem("userRole");
+      const dashboardLink = document.getElementById("dashboard-link");
+      const authLinks = document.getElementById("auth-links");
+      const logoutBtn = document.getElementById("logout-btn");
+
+      // ✅ Ensure dashboard link is only shown for logged-in users
+      if (token && role) {
+          dashboardLink.style.display = "block";
+          dashboardLink.querySelector("a").href = `${role.toLowerCase()}_dashboard.html`;
+          authLinks.style.display = "none";
+          logoutBtn.style.display = "inline-block";
+      } else {
+          dashboardLink.style.display = "none";
+          authLinks.style.display = "block";  // ✅ Show login & register links
+      }
+
+      // ✅ Logout button clears everything properly
+      logoutBtn.addEventListener("click", function () {
+          localStorage.clear();
+          window.location.href = "index.html";  // ✅ Redirect to home
+      });
+  });
+
+</script>
+
+</body>
+</html>

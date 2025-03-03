@@ -4,33 +4,34 @@ import com.anudip.HMS.entity.Patient;
 import com.anudip.HMS.repo.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PatientService {
 
-    @Autowired
-    private PatientRepository patientRepository;
+    private final PatientRepository patientRepository;
 
-    // Fetch all patients
+    @Autowired
+    public PatientService(PatientRepository patientRepository) {
+        this.patientRepository = patientRepository;
+    }
+
     public List<Patient> getAllPatients() {
         return patientRepository.findAll();
     }
 
-    // Fetch patient by ID
-    public Patient getPatientById(Long id) {
-        return patientRepository.findById(id).orElse(null);
+    public Optional<Patient> getPatientById(Long id) {
+        return patientRepository.findById(id);
     }
 
-    // Add a new patient
     public Patient addPatient(Patient patient) {
         return patientRepository.save(patient);
     }
 
-    // Update patient details
     public Patient updatePatient(Long id, Patient patientDetails) {
-        Patient existingPatient = patientRepository.findById(id).orElse(null);
-        if (existingPatient != null) {
+        return patientRepository.findById(id).map(existingPatient -> {
             existingPatient.setName(patientDetails.getName());
             existingPatient.setAge(patientDetails.getAge());
             existingPatient.setGender(patientDetails.getGender());
@@ -38,19 +39,10 @@ public class PatientService {
             existingPatient.setDisease(patientDetails.getDisease());
             existingPatient.setDoctor(patientDetails.getDoctor());
             return patientRepository.save(existingPatient);
-        }
-        return null;
+        }).orElse(null);
     }
 
-    // Delete patient
     public void deletePatient(Long id) {
         patientRepository.deleteById(id);
     }
 }
-
-
-//getAllPatients() → Returns a list of all patients.
-//getPatientById(Long id) → Finds a patient by ID.
-//addPatient(Patient patient) → Saves a new patient to the database.
-//updatePatient(Long id, Patient patientDetails) → Modifies existing patient data.
-//deletePatient(Long id) → Removes a patient from the database.

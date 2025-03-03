@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Hospital Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center mt-4">Book an Appointment</h2>
+    <form id="appointmentForm">
+        <div class="mb-3">
+            <label for="patientName" class="form-label">Your Name</label>
+            <input type="text" id="patientName" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="doctorId" class="form-label">Select Doctor</label>
+            <select id="doctorId" class="form-select">
+                <option value="1">Dr. Smith</option>
+                <option value="2">Dr. Johnson</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" id="date" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Book Appointment</button>
+    </form>
+</div>
+
+<script src="js/appointments.js"></script>
+</body>
+</html>

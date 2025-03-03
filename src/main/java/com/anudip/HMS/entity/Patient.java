@@ -1,16 +1,10 @@
 package com.anudip.HMS.entity;
 
-
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Table(name = "patients")
 public class Patient {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,6 +14,42 @@ public class Patient {
     private String gender;
     private String contact;
     private String disease;
-    private String doctor;
-}
 
+    @ManyToOne
+    @JoinColumn(name = "doctor_id") // Foreign key reference
+    private Doctor doctor;
+
+    // Constructors
+    public Patient() {}
+
+    public Patient(String name, int age, String gender, String contact, String disease, Doctor doctor) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.contact = contact;
+        this.disease = disease;
+        this.doctor = doctor;
+    }
+
+    // Getters & Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public int getAge() { return age; }
+    public void setAge(int age) { this.age = age; }
+
+    public String getGender() { return gender; }
+    public void setGender(String gender) { this.gender = gender; }
+
+    public String getContact() { return contact; }
+    public void setContact(String contact) { this.contact = contact; }
+
+    public String getDisease() { return disease; }
+    public void setDisease(String disease) { this.disease = disease; }
+
+    public Doctor getDoctor() { return doctor; }
+    public void setDoctor(Doctor doctor) { this.doctor = doctor; }
+}

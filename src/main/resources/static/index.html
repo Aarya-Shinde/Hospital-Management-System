@@ -3,136 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Hospital Management</title>
+    <title>Smart Hospital - Home</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
+<!-- Navigation -->
+<nav>
     <div class="logo">Smart Hospital</div>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="appointment.html">Book Appointment</a></li>
-        <li><a href="patient-dashboard.html">Patient Dashboard</a></li>
-        <li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="appointments.html">Appointments</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="dashboard-link" style="display: none;"><a href="#">Dashboard</a></li>
+        <li id="auth-links">
+            <a href="login.html" id="login-link">Login</a>
+            <a href="register.html" id="register-link">Register</a>
+            <button id="logout-btn" style="display: none;">Logout</button>
+        </li>
     </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
-
 
 <!-- Hero Section -->
 <header class="hero">
-    <h1>Welcome to Smart Hospital Management</h1>
-    <p>Your health, our priority. Book appointments with ease.</p>
-    <a href="appointment.html" class="btn">Book Appointment</a>
+    <h1>Welcome to Smart Hospital</h1>
+    <p>Your one-stop solution for healthcare services and appointment management.</p>
+    <a href="appointments.html" class="btn">Book an Appointment</a>
 </header>
 
 <!-- About Section -->
 <section class="about">
-    <h2>Why Choose Us?</h2>
-    <div class="features">
-        <div class="feature">
-            <i class="fas fa-user-md"></i>
-            <h3>Expert Doctors</h3>
-            <p>Connect with highly qualified and experienced medical professionals.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-calendar-check"></i>
-            <h3>Easy Appointments</h3>
-            <p>Schedule appointments with just a few clicks using our online booking system.</p>
-        </div>
-        <div class="feature">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Secure & Reliable</h3>
-            <p>Your data is safe with us, ensuring a secure healthcare experience.</p>
-        </div>
-    </div>
+    <h2>About Us</h2>
+    <p>Smart Hospital is dedicated to providing top-quality healthcare with modern facilities, skilled doctors, and efficient online services.</p>
 </section>
 
 <!-- Services Section -->
 <section class="services">
     <h2>Our Services</h2>
-    <div class="service-list">
-        <div class="service">
-            <i class="fas fa-user-nurse"></i>
-            <h3>24/7 Emergency Care</h3>
-            <p>Immediate medical assistance available anytime.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-stethoscope"></i>
-            <h3>Advanced Diagnostics</h3>
-            <p>High-tech medical equipment for precise diagnosis.</p>
-        </div>
-        <div class="service">
-            <i class="fas fa-pills"></i>
-            <h3>Pharmacy Services</h3>
-            <p>Get your prescriptions easily from our pharmacy.</p>
-        </div>
-    </div>
+    <ul>
+        <li>✔ 24/7 Emergency Care</li>
+        <li>✔ Online Doctor Consultation</li>
+        <li>✔ Lab Test & Diagnostics</li>
+        <li>✔ Pharmacy & Medicine Delivery</li>
+    </ul>
 </section>
 
-
-<!-- Testimonials Section -->
-<section class="testimonials">
-    <h2>What Our Patients Say</h2>
-    <div class="testimonial-slider">
-        <div class="testimonial">
-            <p>"The doctors were very professional and caring. I highly recommend Smart Hospital!"</p>
-            <h4>- Sarah J.</h4>
+<!-- Doctors Section -->
+<section class="doctors">
+    <h2>Meet Our Doctors</h2>
+    <div class="doctor-list">
+        <div class="doctor">
+            <img src="images/doctor1.jpg" alt="Doctor">
+            <p>Dr. Aarya Shinde (Cardiologist)</p>
         </div>
-        <div class="testimonial">
-            <p>"Booking an appointment was so easy. The service is outstanding!"</p>
-            <h4>- Michael R.</h4>
+        <div class="doctor">
+            <img src="images/doctor2.jpg" alt="Doctor">
+            <p>Dr. Rahul Desai (Neurologist)</p>
         </div>
-        <div class="testimonial">
-            <p>"Fast and reliable service. The best hospital experience I’ve ever had!"</p>
-            <h4>- Linda P.</h4>
-        </div>
-    </div>
-</section>
-
-<!-- FAQs Section -->
-<section class="faqs">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq">
-        <h3>How do I book an appointment?</h3>
-        <p>You can book an appointment online using our easy-to-use booking system.</p>
-    </div>
-    <div class="faq">
-        <h3>Do you accept insurance?</h3>
-        <p>Yes, we accept all major health insurance plans.</p>
     </div>
 </section>
 
 <!-- Contact Section -->
-<footer>
-    <p>&copy; 2025 Smart Hospital. All rights reserved.</p>
-    <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-</footer>
-
+<section class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@smarthospital.com</p>
+    <p>Phone: +91 98765 43210</p>
+</section>
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2025 Smart Hospital Management. All rights reserved.</p>
-    <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
+    <p>&copy; 2025 Smart Hospital. All rights reserved.</p>
 </footer>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("userToken");
+        const role = localStorage.getItem("userRole");
+        const dashboardLink = document.getElementById("dashboard-link");
+        const authLinks = document.getElementById("auth-links");
+        const logoutBtn = document.getElementById("logout-btn");
 
-    function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-}
+        // ✅ Ensure dashboard link is only shown for logged-in users
+        if (token && role) {
+            dashboardLink.style.display = "block";
+            dashboardLink.querySelector("a").href = `${role.toLowerCase()}_dashboard.html`;
+            authLinks.style.display = "none";
+            logoutBtn.style.display = "inline-block";
+        } else {
+            dashboardLink.style.display = "none";
+            authLinks.style.display = "block";  // ✅ Show login & register links
+        }
+
+        // ✅ Logout button clears everything properly
+        logoutBtn.addEventListener("click", function () {
+            localStorage.clear();
+            window.location.href = "index.html";  // ✅ Redirect to home
+        });
+    });
+
 
 </script>
+
+
 </body>
 </html>

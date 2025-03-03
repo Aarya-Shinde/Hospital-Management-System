@@ -1,6 +1,5 @@
 package com.anudip.HMS.controller;
 
-
 import com.anudip.HMS.entity.Appointment;
 import com.anudip.HMS.service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import java.util.List;
 @RequestMapping("/appointments")
 @CrossOrigin(origins = "*")
 public class AppointmentController {
+
     @Autowired
     private AppointmentService appointmentService;
 
@@ -20,6 +20,7 @@ public class AppointmentController {
     public List<Appointment> getAppointments(@PathVariable String doctor, @PathVariable String date) {
         return appointmentService.getAppointmentsByDoctor(doctor, LocalDate.parse(date));
     }
+
     @GetMapping("/all")
     public List<Appointment> getAllAppointments() {
         return appointmentService.getAllAppointments();

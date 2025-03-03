@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patient Dashboard</title>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Hospital Management</title>
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-<h2>My Appointments</h2>
 
-<label for="patientName">Enter Your Name:</label>
-<input type="text" id="patientName">
-<button onclick="loadPatientAppointments()">View My Appointments</button>
+<header>
+    <h1>Patient Dashboard</h1>
+</header>
 
-<table>
-  <thead>
-  <tr><th>Doctor</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr>
-  </thead>
-  <tbody id="patientAppointments"></tbody>
-</table>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Appointments</a>
+    <a href="#">Medical Records</a>
+    <a href="#">Prescriptions</a>
+    <a href="#">Logout</a>
+</nav>
 
-<script>
-  function loadPatientAppointments() {
-      const patientName = document.getElementById("patientName").value;
+<div class="container">
+    <h2>Welcome, [Patient Name]</h2>
 
-      axios.get("http://localhost:8080/appointments/all")
-          .then(response => {
-              let rows = "";
-              response.data.forEach(app => {
-                  if (app.patientName === patientName) {
-                      rows += `<tr><td>${app.doctorName}</td><td>${app.date}</td><td>${app.time}</td><td>${app.status}</td>
-                               <td><button onclick="cancelAppointment(${app.id})">Cancel</button></td></tr>`;
-                  }
-              });
-              document.getElementById("patientAppointments").innerHTML = rows;
-          });
-  }
+    <div class="card">
+        <h3>Upcoming Appointment</h3>
+        <p>Dr. Smith - 10th March 2025, 2:00 PM</p>
+        <button>Reschedule</button>
+    </div>
 
-  function cancelAppointment(id) {
-      axios.delete(`http://localhost:8080/appointments/cancel/${id}`)
-          .then(() => alert("Appointment canceled"));
-  }
-</script>
+    <div class="card">
+        <h3>Recent Test Results</h3>
+        <p>Blood Test - 2nd March 2025 - Normal</p>
+        <button>View Details</button>
+    </div>
+
+    <div class="card">
+        <h3>Prescription Updates</h3>
+        <p>Metformin - 500mg - Twice Daily</p>
+        <button>Request Refill</button>
+    </div>
+</div>
+
+<footer class="footer">
+    &copy; 2025 Hospital Management System
+</footer>
+
 </body>
 </html>
